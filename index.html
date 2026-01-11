@@ -201,11 +201,30 @@
         /* --- UTILS --- */
         .back-to-top { position: fixed; bottom: 20px; right: 20px; background: #76ff03; width: 45px; height: 45px; border-radius: 50%; display: none; align-items: center; justify-content: center; z-index: 1000; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
         
-        @media (max-width: 992px) {
-            .about-container { flex-direction: column; text-align: center; }
-            nav { display: none; }
-            .skills-grid-line { grid-template-columns: repeat(2, 1fr); }
-        }
+      @media (max-width: 992px) {
+    /* Keeps the background full screen but handles the content better */
+    .hero-wrapper { 
+        height: 100vh; 
+        display: flex;
+        align-items: center;
+    }
+
+    /* Shrinks the text only on mobile/tablet so it fits the screen */
+    .hero-content h1 { 
+        font-size: 32px !important; 
+        line-height: 1.2; 
+        margin-top: 40px; /* Moves text down away from header without breaking layout */
+    }
+
+    .about-container { flex-direction: column; text-align: center; }
+    
+    /* Ensure the mobile menu is still functional */
+    nav { display: none; } 
+    nav.active { display: block; } 
+
+    .skills-grid-line { grid-template-columns: repeat(2, 1fr); }
+}
+        
     </style>
 </head>
 <body>
