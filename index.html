@@ -201,28 +201,51 @@
         /* --- UTILS --- */
         .back-to-top { position: fixed; bottom: 20px; right: 20px; background: #76ff03; width: 45px; height: 45px; border-radius: 50%; display: none; align-items: center; justify-content: center; z-index: 1000; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
         
-      @media (max-width: 992px) {
-    /* Keeps the background full screen but handles the content better */
-    .hero-wrapper { 
-        height: 100vh; 
-        display: flex;
-        align-items: center;
-    }
-
-    /* Shrinks the text only on mobile/tablet so it fits the screen */
-    .hero-content h1 { 
-        font-size: 32px !important; 
-        line-height: 1.2; 
-        margin-top: 40px; /* Moves text down away from header without breaking layout */
-    }
-
-    .about-container { flex-direction: column; text-align: center; }
+/* --- MOBILE RESPONSIVE FIXES --- */
+@media (max-width: 992px) {
+    header { padding: 15px 5%; justify-content: space-between; }
     
-    /* Ensure the mobile menu is still functional */
-    nav { display: none; } 
-    nav.active { display: block; } 
+    /* Show Hamburger and hide Desktop Menu */
+    .menu-toggle { display: block; color: #76ff03; font-size: 24px; cursor: pointer; z-index: 1001; }
+    .desktop-only { display: none; } /* Hides "Get Quote" button on tiny headers */
 
-    .skills-grid-line { grid-template-columns: repeat(2, 1fr); }
+    nav {
+        display: none; /* Hidden by default */
+        position: absolute;
+        top: 100%; left: 0; width: 100%;
+        background: rgba(15, 23, 42, 0.98);
+        padding: 30px 0;
+        text-align: center;
+        border-bottom: 3px solid #76ff03;
+    }
+    nav.active { display: block; } /* Show when toggled */
+    nav ul { flex-direction: column; gap: 20px; }
+    nav a { font-size: 18px; }
+
+    /* Hero Text Adjustment */
+    .hero-content h1 { font-size: 32px !important; margin-top: 60px; }
+    
+    /* Layouts: Stack content */
+    .about-container { flex-direction: column; text-align: center; }
+    .about-features { flex-direction: column; gap: 15px; }
+
+    /* Grids: 2 columns on tablets/large phones */
+    .services-grid, .skills-grid-line { 
+        grid-template-columns: repeat(2, 1fr) !important; 
+        gap: 15px;
+    }
+
+    /* Form: 1 column */
+    .form-grid-central { grid-template-columns: 1fr; }
+    .full-row { grid-column: span 1; }
+    .btn-submit-pro-central { grid-column: span 1; }
+}
+
+@media (max-width: 500px) {
+    /* Grids: 1 column on small phones */
+    .services-grid, .skills-grid-line { 
+        grid-template-columns: 1fr !important; 
+    }
 }
         
     </style>
@@ -239,18 +262,21 @@
         <div class="overlay"></div>
 
         <header>
-            <a href="#home" class="logo">Prime<span>Vent</span></a>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#quote">Contact Us</a></li>
-                </ul>
-            </nav>
-            <a href="#quote" class="btn-quote">GET A QUOTE</a>
-        </header>
+    <a href="#home" class="logo">Prime<span>Vent</span></a>
+    
+    <div class="menu-toggle" id="mobile-toggle"><i class="fas fa-bars"></i></div>
+
+    <nav id="nav-menu">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#quote">Contact Us</a></li>
+        </ul>
+    </nav>
+    <a href="#quote" class="btn-quote desktop-only">GET A QUOTE</a>
+</header>
 
         <main class="hero-content">
             <span class="subtitle">Cleaning Services</span>
@@ -472,6 +498,24 @@
         btt.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+        // Mobile Menu Toggle Logic
+const mobileToggle = document.getElementById('mobile-toggle');
+const navMenu = document.getElementById('nav-menu');
+
+mobileToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    // Change icon from bars to X
+    const icon = mobileToggle.querySelector('i');
+    icon.classList.toggle('fa-bars');
+    icon.classList.toggle('fa-times');
+});
+
+// Close menu when a link is clicked
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+    });
+});
     </script>
 
 </body>
