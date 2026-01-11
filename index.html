@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrimeVent | Professional Cleaning Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* --- CORE STYLES --- */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body { background-color: #f8f9fa; color: #333; line-height: 1.6; }
+
+        /* --- HERO SLIDESHOW --- */
+        .hero-wrapper {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            z-index: 0;
+        }
+
+        .slide.active { opacity: 1; }
+
+        .overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(15, 23, 42, 0.7);
+            z-index: 1;
+        }
+
+        /* --- HEADER --- */
+        header {
+            position: fixed; /* Keep menu on top while scrolling */
+            width: 100%;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.95);
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .logo { color: white; font-size: 26px; font-weight: 800; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+        .logo span { color: #76ff03; border-bottom: 2px solid #76ff03; }
+
+        nav ul { display: flex; list-style: none; gap: 25px; }
+        nav a { color: #fff; text-decoration: none; font-size: 14px; font-weight: 600; transition: 0.3s; }
+        nav a:hover { color: #76ff03; }
+
+        .btn-quote { background: #76ff03; color: #000; padding: 10px 22px; border-radius: 5px; font-weight: 800; text-decoration: none; font-size: 13px; transition: 0.3s; }
+        .btn-quote:hover { background: #fff; transform: scale(1.05); }
+
+        /* --- HERO TEXT --- */
+        .hero-content {
+            position: relative;
+            z-index: 5;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 8%;
+            color: white;
+        }
+
+        .hero-content h1 { font-size: clamp(36px, 6vw, 68px); line-height: 1.1; margin-bottom: 20px; font-weight: 800; }
+        .hero-content .subtitle { color: #76ff03; font-size: 18px; margin-bottom: 10px; font-weight: 600; display: block; }
+        .hero-content p { font-size: 18px; max-width: 600px; margin-bottom: 35px; color: #e2e8f0; }
+
+        /* --- ABOUT US SECTION --- */
+        .section-padding { padding: 100px 8%; }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-size: 38px; color: #1e88e5; font-weight: 800; margin-bottom: 10px; }
+        .section-title p { color: #666; font-size: 18px; }
+
+        .about-container { display: flex; align-items: center; gap: 50px; margin-bottom: 50px; }
+        .about-img { flex: 1; }
+        .about-img img { width: 100%; border-radius: 15px; box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        .about-content { flex: 1.2; }
+        .about-content h3 { font-size: 30px; margin-bottom: 20px; color: #333; }
+        .about-content p { margin-bottom: 20px; color: #555; }
+
+        .about-features { display: flex; justify-content: space-between; gap: 20px; text-align: center; margin-top: 40px; }
+        .feat-card { flex: 1; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .feat-card i { font-size: 35px; color: #1e88e5; margin-bottom: 15px; }
+        .feat-card h4 { color: #1e88e5; margin-bottom: 8px; }
+
+        /* --- SERVICES GRID --- */
+        .services-bg { background-color: #f1f5f9; }
+        .services-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 25px; 
+        }
+
+        .service-card {
+            background: white;
+            padding: 40px 30px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            border-bottom: 4px solid transparent;
+        }
+
+        .service-card:hover { transform: translateY(-10px); border-bottom: 4px solid #76ff03; }
+        .service-card i { font-size: 45px; color: #1e88e5; margin-bottom: 20px; }
+        .service-card h3 { font-size: 20px; margin-bottom: 15px; color: #0f172a; }
+        .service-card p { font-size: 14px; color: #64748b; }
+        .service-card .line { width: 50px; height: 3px; background: #76ff03; margin: 15px auto; }
+
+        /* --- PROJECTS SECTION --- */
+        .projects-centralized {
+            position: relative;
+            min-height: 500px;
+            padding: 100px 5%;
+            background: url('images/immm.jpg') no-repeat center center/cover;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            justify-content: center; 
+            text-align: center;
+        }
+
+        .projects-centralized::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(15, 23, 42, 0.85); 
+            z-index: 1;
+        }
+
+        .projects-inner { position: relative; z-index: 2; width: 100%; max-width: 1100px; }
+        .projects-inner h2 { color: #76ff03; font-size: 14px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px; font-weight: 800; }
+        .projects-inner h1 { color: #fff; font-size: 36px; margin-bottom: 50px; font-weight: 800; }
+
+        .stats-grid-central { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
+        .stat-card-pro { padding: 40px 20px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 15px; transition: 0.4s ease; backdrop-filter: blur(5px); }
+        .stat-card-pro:hover { transform: translateY(-10px); background: rgba(118, 255, 3, 0.1); border-color: #76ff03; }
+        .stat-card-pro i { font-size: 45px; color: #76ff03; margin-bottom: 20px; }
+        .stat-card-pro h3 { color: #fff; font-size: 38px; font-weight: 800; margin-bottom: 5px; }
+        .stat-card-pro p { color: #cbd5e1; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* --- QUOTE SECTION --- */
+        .quote-wrapper-central { padding: 100px 5%; background-color: #ffffff; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .central-quote-card { width: 100%; max-width: 650px; padding: 50px; background: #ffffff; border-radius: 25px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); border: 1px solid #f1f5f9; text-align: center; }
+        .central-quote-card h2 { color: #1e88e5; font-size: 32px; font-weight: 800; margin-bottom: 10px; text-transform: uppercase; }
+        .form-grid-central { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; text-align: left; }
+        .full-row { grid-column: span 2; }
+        .input-group-central { display: flex; flex-direction: column; }
+        .input-group-central label { font-size: 11px; font-weight: 800; color: #0f172a; margin-bottom: 8px; letter-spacing: 0.5px; }
+        .input-group-central input, .input-group-central textarea { padding: 14px 16px; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 14px; background-color: #fdfdfd; transition: 0.3s; }
+        .input-group-central input:focus { border-color: #1e88e5; outline: none; box-shadow: 0 0 0 4px rgba(30, 136, 229, 0.1); }
+        .btn-submit-pro-central { grid-column: span 2; background: #1e88e5; color: white; padding: 18px; border: none; border-radius: 10px; font-weight: 800; font-size: 16px; cursor: pointer; margin-top: 15px; transition: 0.3s; text-transform: uppercase; }
+        .btn-submit-pro-central:hover { background: #0f172a; transform: translateY(-2px); }
+
+        /* --- SKILLS SECTION --- */
+        .skills-final-section { padding: 100px 5%; background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('images/imagee.jpg'); background-attachment: fixed; background-size: cover; text-align: center; }
+        .skills-final-section h2 { color: #ffffff; font-size: 38px; font-weight: 900; margin-bottom: 50px; text-transform: uppercase; }
+        .skills-final-section h2 span { color: #76ff03; }
+        .skills-grid-line { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; max-width: 1300px; margin: 0 auto; }
+        .skill-pro-card { background: #ffffff; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3); transition: 0.3s; }
+        .skill-pro-card:hover { transform: translateY(-10px); }
+        .skill-pro-img { width: 100%; height: 160px; object-fit: cover; }
+        .skill-pro-body { padding: 20px; text-align: left; }
+        .skill-pro-body i { color: #1e88e5; font-size: 24px; margin-bottom: 10px; display: block; }
+        .skill-pro-body h4 { color: #0f172a; font-size: 16px; font-weight: 800; margin-bottom: 8px; }
+
+        /* --- FOOTER --- */
+        .minimal-light-footer { background-color: #ffffff; color: #000000; padding: 60px 5% 30px; font-family: 'Segoe UI', Arial, sans-serif; border-top: 1px solid #eeeeee; text-align: center; }
+        .footer-nav-simple { display: flex; justify-content: center; gap: 35px; margin: 40px 0; flex-wrap: wrap; }
+        .nav-link-simple { text-decoration: none; color: #000000; font-weight: 700; font-size: 15px; }
+        .link-dash { width: 20px; height: 3px; background-color: #76ff03; margin: 4px auto 0; }
+        .social-links-simple { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; }
+        .social-btn-simple { width: 40px; height: 40px; background: #000000; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: 0.3s; }
+        .social-btn-simple:hover { background-color: #76ff03; color: #000000; }
+
+        /* --- UTILS --- */
+        .back-to-top { position: fixed; bottom: 20px; right: 20px; background: #76ff03; width: 45px; height: 45px; border-radius: 50%; display: none; align-items: center; justify-content: center; z-index: 1000; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        
+        @media (max-width: 992px) {
+            .about-container { flex-direction: column; text-align: center; }
+            nav { display: none; }
+            .skills-grid-line { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></div>
+
+    <div class="hero-wrapper" id="home">
+        <div class="slide active" style="background-image: url('images/imag.jpg');"></div>
+        <div class="slide" style="background-image: url('images/immm.jpg');"></div>
+        <div class="slide" style="background-image: url('images/imagee.jpg');"></div>
+        
+        <div class="overlay"></div>
+
+        <header>
+            <a href="#home" class="logo">Prime<span>Vent</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#quote">Contact Us</a></li>
+                </ul>
+            </nav>
+            <a href="#quote" class="btn-quote">GET A QUOTE</a>
+        </header>
+
+        <main class="hero-content">
+            <span class="subtitle">Cleaning Services</span>
+            <h1>Looking For<br>Skilled Cleaners?</h1>
+            <p>Your health is our priority. We offer the best duct cleaning and sanitizing services nationwide.</p>
+            <a href="#about" class="btn-quote" style="padding: 15px 35px; width: fit-content;">LEARN MORE</a>
+        </main>
+    </div>
+
+    <section class="section-padding" id="about">
+        <div class="section-title">
+            <h2>About Us</h2>
+            <p>Ensuring Pure, Clean Air for a Healthier Home Environment</p>
+        </div>
+
+        <div class="about-container">
+            <div class="about-img">
+                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=1000" alt="Duct Cleaning">
+            </div>
+            <div class="about-content">
+                <h3>Your Trusted Partner for Superior Duct Cleaning</h3>
+                <p>At PrimeVent Purifiers, we provide top-quality duct cleaning to ensure your home's air is clean and healthy. Our certified professionals use advanced equipment and eco-friendly techniques.</p>
+                <p>With years of experience, we prioritize your comfort and well-being. Trust us for reliable and efficient services.</p>
+            </div>
+        </div>
+
+        <div class="about-features">
+            <div class="feat-card">
+                <i class="fas fa-users"></i>
+                <h4>Professional Team</h4>
+                <p>Our team consists of certified professionals with years of experience.</p>
+            </div>
+            <div class="feat-card">
+                <i class="fas fa-leaf"></i>
+                <h4>Eco-Friendly Solutions</h4>
+                <p>We use eco-friendly techniques to ensure a safe environment.</p>
+            </div>
+            <div class="feat-card">
+                <i class="fas fa-tools"></i>
+                <h4>Advanced Equipment</h4>
+                <p>We utilize the latest technology for efficient and thorough cleaning.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding services-bg" id="services">
+        <div class="section-title">
+            <h2 style="color: #0f172a;">OUR SERVICES</h2>
+            <p>Choose our services for impeccable cleanliness and comfort</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-wind"></i>
+                <h3>Duct Cleaning</h3>
+                <div class="line"></div>
+                <p>We offer professional duct cleaning services to enhance your home's air quality.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-border-all"></i>
+                <h3>Vents Cleaning</h3>
+                <div class="line"></div>
+                <p>Reliable and efficient vents cleaning services, always.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-soap"></i>
+                <h3>Dryer Vent Cleaning</h3>
+                <div class="line"></div>
+                <p>Prevent fire hazards with our thorough and expert dryer vent cleaning.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-fire-alt"></i>
+                <h3>Furnace Cleaning</h3>
+                <div class="line"></div>
+                <p>Trust us to keep your furnace running smoothly with our thorough cleaning.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects-centralized" id="projects">
+        <div class="projects-inner">
+            <h2>Our Impact</h2>
+            <h1>Reliable Service Across the Nation</h1>
+            <div class="stats-grid-central">
+                <div class="stat-card-pro"><i class="fas fa-headset"></i><h3>24/7</h3><p>Helpline Service</p></div>
+                <div class="stat-card-pro"><i class="fas fa-check-circle"></i><h3>4000+</h3><p>Successful Projects</p></div>
+                <div class="stat-card-pro"><i class="fas fa-users"></i><h3>250+</h3><p>Expert Employees</p></div>
+                <div class="stat-card-pro"><i class="fas fa-map-marker-alt"></i><h3>40+</h3><p>States Served</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quote-wrapper-central" id="quote">
+        <div class="central-quote-card">
+            <h2>Request A Quotation</h2>
+            <span class="form-subtitle">Tell us about your project, and our experts will provide a customized quote within 24 hours.</span>
+
+            <form class="form-grid-central" id="quoteForm">
+                <div class="input-group-central full-row"><label>FULL NAME *</label><input type="text" required></div>
+                <div class="input-group-central"><label>EMAIL ADDRESS *</label><input type="email" required></div>
+                <div class="input-group-central"><label>PHONE NUMBER</label><input type="text"></div>
+                <div class="input-group-central"><label>AC UNITS IN HOUSE *</label><input type="number" required></div>
+                <div class="input-group-central"><label>AVAILABILITY *</label><input type="text" required></div>
+                <div class="input-group-central full-row"><label>ADDITIONAL DETAILS</label><textarea rows="3"></textarea></div>
+                <button type="submit" class="btn-submit-pro-central">Get My Free Quote</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="skills-final-section">
+        <h2>Our <span>Skills</span></h2>
+        <div class="skills-grid-line">
+            <div class="skill-pro-card">
+                <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=400" class="skill-pro-img">
+                <div class="skill-pro-body"><i class="fas fa-search"></i><h4>Thorough Inspection</h4><p>We inspect every duct thoroughly for cleaning solutions.</p></div>
+            </div>
+            <div class="skill-pro-card">
+                <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?q=80&w=400" class="skill-pro-img">
+                <div class="skill-pro-body"><i class="fas fa-certificate"></i><h4>Certified Experts</h4><p>Certified duct cleaning experts you can trust.</p></div>
+            </div>
+            <div class="skill-pro-card">
+                <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=400" class="skill-pro-img">
+                <div class="skill-pro-body"><i class="fas fa-leaf"></i><h4>Eco-Friendly</h4><p>Sustainable and non-toxic methods for a safe home.</p></div>
+            </div>
+            <div class="skill-pro-card">
+                <img src="https://images.unsplash.com/photo-1527515545081-5db817172677?q=80&w=400" class="skill-pro-img">
+                <div class="skill-pro-body"><i class="fas fa-broom"></i><h4>Full Cleaning</h4><p>Complete removal of dust from vents and return lines.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="minimal-light-footer">
+        <div class="footer-container">
+            <h2 class="footer-title">Contact Us</h2>
+            <a href="mailto:primeventpurifiers@gmail.com" class="footer-email">primeventpurifiers@gmail.com</a>
+            <div class="footer-nav-simple">
+                <a href="#home" class="nav-link-simple">Home<div class="link-dash"></div></a>
+                <a href="#services" class="nav-link-simple">Services<div class="link-dash"></div></a>
+                <a href="#about" class="nav-link-simple">About<div class="link-dash"></div></a>
+                <a href="#projects" class="nav-link-simple">Projects<div class="link-dash"></div></a>
+                <a href="#quote" class="nav-link-simple">Contact Us<div class="link-dash"></div></a>
+            </div>
+            <div class="social-links-simple">
+                <a href="#" class="social-btn-simple"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-btn-simple"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p class="copyright-simple">&copy; 2026 Prime Vent Purifiers. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Hero Slideshow Logic
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+        setInterval(nextSlide, 5000);
+
+        // 2. Quote Form Functionality
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert("Thank you! Your request has been sent. Our team will contact you within 24 hours.");
+            this.reset();
+        });
+
+        // 3. Back to Top Button Logic
+        const btt = document.getElementById('backToTop');
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                btt.style.display = "flex";
+            } else {
+                btt.style.display = "none";
+            }
+        };
+        btt.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+
+</body>
+</html>
