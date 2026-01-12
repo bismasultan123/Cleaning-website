@@ -52,7 +52,7 @@
 
         /* --- HEADER --- */
         header {
-            position: fixed; /* Keep menu on top while scrolling */
+            position: fixed;
             width: 100%;
             z-index: 1000;
             background: rgba(15, 23, 42, 0.95);
@@ -64,14 +64,14 @@
         }
 
         .logo { color: white; font-size: 26px; font-weight: 800; text-decoration: none; display: flex; align-items: center; gap: 10px; }
-        .logo span { color: #76ff03; border-bottom: 2px solid #76ff03; }
+        .logo span { color: #38bdf8; border-bottom: 2px solid #38bdf8; }
 
         nav ul { display: flex; list-style: none; gap: 25px; }
         nav a { color: #fff; text-decoration: none; font-size: 14px; font-weight: 600; transition: 0.3s; }
-        nav a:hover { color: #76ff03; }
+        nav a:hover { color: #38bdf8; }
 
-        .btn-quote { background: #76ff03; color: #000; padding: 10px 22px; border-radius: 5px; font-weight: 800; text-decoration: none; font-size: 13px; transition: 0.3s; }
-        .btn-quote:hover { background: #fff; transform: scale(1.05); }
+        .btn-quote { background: #2563eb; color: #fff; padding: 10px 22px; border-radius: 5px; font-weight: 800; text-decoration: none; font-size: 13px; transition: 0.3s; border: none; cursor: pointer; }
+        .btn-quote:hover { background: #fff; color: #2563eb; transform: scale(1.05); }
 
         /* --- HERO TEXT --- */
         .hero-content {
@@ -86,13 +86,13 @@
         }
 
         .hero-content h1 { font-size: clamp(36px, 6vw, 68px); line-height: 1.1; margin-bottom: 20px; font-weight: 800; }
-        .hero-content .subtitle { color: #76ff03; font-size: 18px; margin-bottom: 10px; font-weight: 600; display: block; }
+        .hero-content .subtitle { color: #38bdf8; font-size: 18px; margin-bottom: 10px; font-weight: 600; display: block; }
         .hero-content p { font-size: 18px; max-width: 600px; margin-bottom: 35px; color: #e2e8f0; }
 
         /* --- ABOUT US SECTION --- */
         .section-padding { padding: 100px 8%; }
         .section-title { text-align: center; margin-bottom: 60px; }
-        .section-title h2 { font-size: 38px; color: #1e88e5; font-weight: 800; margin-bottom: 10px; }
+        .section-title h2 { font-size: 38px; color: #1e3a8a; font-weight: 800; margin-bottom: 10px; }
         .section-title p { color: #666; font-size: 18px; }
 
         .about-container { display: flex; align-items: center; gap: 50px; margin-bottom: 50px; }
@@ -104,8 +104,8 @@
 
         .about-features { display: flex; justify-content: space-between; gap: 20px; text-align: center; margin-top: 40px; }
         .feat-card { flex: 1; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        .feat-card i { font-size: 35px; color: #1e88e5; margin-bottom: 15px; }
-        .feat-card h4 { color: #1e88e5; margin-bottom: 8px; }
+        .feat-card i { font-size: 35px; color: #2563eb; margin-bottom: 15px; }
+        .feat-card h4 { color: #2563eb; margin-bottom: 8px; }
 
         /* --- SERVICES GRID --- */
         .services-bg { background-color: #f1f5f9; }
@@ -125,18 +125,18 @@
             border-bottom: 4px solid transparent;
         }
 
-        .service-card:hover { transform: translateY(-10px); border-bottom: 4px solid #76ff03; }
-        .service-card i { font-size: 45px; color: #1e88e5; margin-bottom: 20px; }
+        .service-card:hover { transform: translateY(-10px); border-bottom: 4px solid #2563eb; }
+        .service-card i { font-size: 45px; color: #1e3a8a; margin-bottom: 20px; }
         .service-card h3 { font-size: 20px; margin-bottom: 15px; color: #0f172a; }
         .service-card p { font-size: 14px; color: #64748b; }
-        .service-card .line { width: 50px; height: 3px; background: #76ff03; margin: 15px auto; }
+        .service-card .line { width: 50px; height: 3px; background: #38bdf8; margin: 15px auto; }
 
         /* --- PROJECTS SECTION --- */
         .projects-centralized {
             position: relative;
             min-height: 500px;
             padding: 100px 5%;
-            background: url('images/immm.jpg') no-repeat center center/cover;
+            background: url('images/california-air-duct-cleaning.jpg') no-repeat center center/cover;
             background-attachment: fixed;
             display: flex;
             flex-direction: column;
@@ -154,100 +154,93 @@
         }
 
         .projects-inner { position: relative; z-index: 2; width: 100%; max-width: 1100px; }
-        .projects-inner h2 { color: #76ff03; font-size: 14px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px; font-weight: 800; }
+        .projects-inner h2 { color: #38bdf8; font-size: 14px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px; font-weight: 800; }
         .projects-inner h1 { color: #fff; font-size: 36px; margin-bottom: 50px; font-weight: 800; }
 
         .stats-grid-central { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
         .stat-card-pro { padding: 40px 20px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 15px; transition: 0.4s ease; backdrop-filter: blur(5px); }
-        .stat-card-pro:hover { transform: translateY(-10px); background: rgba(118, 255, 3, 0.1); border-color: #76ff03; }
-        .stat-card-pro i { font-size: 45px; color: #76ff03; margin-bottom: 20px; }
+        .stat-card-pro:hover { transform: translateY(-10px); background: rgba(37, 99, 235, 0.1); border-color: #2563eb; }
+        .stat-card-pro i { font-size: 45px; color: #38bdf8; margin-bottom: 20px; }
         .stat-card-pro h3 { color: #fff; font-size: 38px; font-weight: 800; margin-bottom: 5px; }
         .stat-card-pro p { color: #cbd5e1; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; }
 
         /* --- QUOTE SECTION --- */
         .quote-wrapper-central { padding: 100px 5%; background-color: #ffffff; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
         .central-quote-card { width: 100%; max-width: 650px; padding: 50px; background: #ffffff; border-radius: 25px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); border: 1px solid #f1f5f9; text-align: center; }
-        .central-quote-card h2 { color: #1e88e5; font-size: 32px; font-weight: 800; margin-bottom: 10px; text-transform: uppercase; }
+        .central-quote-card h2 { color: #1e3a8a; font-size: 32px; font-weight: 800; margin-bottom: 10px; text-transform: uppercase; }
         .form-grid-central { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; text-align: left; }
         .full-row { grid-column: span 2; }
         .input-group-central { display: flex; flex-direction: column; }
         .input-group-central label { font-size: 11px; font-weight: 800; color: #0f172a; margin-bottom: 8px; letter-spacing: 0.5px; }
         .input-group-central input, .input-group-central textarea { padding: 14px 16px; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 14px; background-color: #fdfdfd; transition: 0.3s; }
-        .input-group-central input:focus { border-color: #1e88e5; outline: none; box-shadow: 0 0 0 4px rgba(30, 136, 229, 0.1); }
-        .btn-submit-pro-central { grid-column: span 2; background: #1e88e5; color: white; padding: 18px; border: none; border-radius: 10px; font-weight: 800; font-size: 16px; cursor: pointer; margin-top: 15px; transition: 0.3s; text-transform: uppercase; }
+        .input-group-central input:focus { border-color: #2563eb; outline: none; box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1); }
+        .btn-submit-pro-central { grid-column: span 2; background: #2563eb; color: white; padding: 18px; border: none; border-radius: 10px; font-weight: 800; font-size: 16px; cursor: pointer; margin-top: 15px; transition: 0.3s; text-transform: uppercase; }
         .btn-submit-pro-central:hover { background: #0f172a; transform: translateY(-2px); }
 
         /* --- SKILLS SECTION --- */
-        .skills-final-section { padding: 100px 5%; background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('images/imagee.jpg'); background-attachment: fixed; background-size: cover; text-align: center; }
+        .skills-final-section { padding: 100px 5%; background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('images/abc.jfif'); background-attachment: fixed; background-size: cover; text-align: center; }
         .skills-final-section h2 { color: #ffffff; font-size: 38px; font-weight: 900; margin-bottom: 50px; text-transform: uppercase; }
-        .skills-final-section h2 span { color: #76ff03; }
+        .skills-final-section h2 span { color: #38bdf8; }
         .skills-grid-line { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; max-width: 1300px; margin: 0 auto; }
         .skill-pro-card { background: #ffffff; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3); transition: 0.3s; }
         .skill-pro-card:hover { transform: translateY(-10px); }
         .skill-pro-img { width: 100%; height: 160px; object-fit: cover; }
         .skill-pro-body { padding: 20px; text-align: left; }
-        .skill-pro-body i { color: #1e88e5; font-size: 24px; margin-bottom: 10px; display: block; }
+        .skill-pro-body i { color: #2563eb; font-size: 24px; margin-bottom: 10px; display: block; }
         .skill-pro-body h4 { color: #0f172a; font-size: 16px; font-weight: 800; margin-bottom: 8px; }
 
         /* --- FOOTER --- */
         .minimal-light-footer { background-color: #ffffff; color: #000000; padding: 60px 5% 30px; font-family: 'Segoe UI', Arial, sans-serif; border-top: 1px solid #eeeeee; text-align: center; }
         .footer-nav-simple { display: flex; justify-content: center; gap: 35px; margin: 40px 0; flex-wrap: wrap; }
         .nav-link-simple { text-decoration: none; color: #000000; font-weight: 700; font-size: 15px; }
-        .link-dash { width: 20px; height: 3px; background-color: #76ff03; margin: 4px auto 0; }
+        .link-dash { width: 20px; height: 3px; background-color: #38bdf8; margin: 4px auto 0; }
         .social-links-simple { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; }
         .social-btn-simple { width: 40px; height: 40px; background: #000000; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: 0.3s; }
-        .social-btn-simple:hover { background-color: #76ff03; color: #000000; }
+        .social-btn-simple:hover { background-color: #2563eb; color: #ffffff; }
 
         /* --- UTILS --- */
-        .back-to-top { position: fixed; bottom: 20px; right: 20px; background: #76ff03; width: 45px; height: 45px; border-radius: 50%; display: none; align-items: center; justify-content: center; z-index: 1000; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .back-to-top { position: fixed; bottom: 20px; right: 20px; background: #2563eb; color: white; width: 45px; height: 45px; border-radius: 50%; display: none; align-items: center; justify-content: center; z-index: 1000; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
         
-/* --- MOBILE RESPONSIVE FIXES --- */
-@media (max-width: 992px) {
-    header { padding: 15px 5%; justify-content: space-between; }
-    
-    /* Show Hamburger and hide Desktop Menu */
-    .menu-toggle { display: block; color: #76ff03; font-size: 24px; cursor: pointer; z-index: 1001; }
-    .desktop-only { display: none; } /* Hides "Get Quote" button on tiny headers */
+        /* --- MOBILE RESPONSIVE FIXES --- */
+        @media (max-width: 992px) {
+            header { padding: 15px 5%; justify-content: space-between; }
+            .menu-toggle { display: block; color: #38bdf8; font-size: 24px; cursor: pointer; z-index: 1001; }
+            .desktop-only { display: none; }
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%; left: 0; width: 100%;
+                background: rgba(15, 23, 42, 0.98);
+                padding: 30px 0;
+                text-align: center;
+                border-bottom: 3px solid #38bdf8;
+            }
+            nav.active { display: block; }
+            nav ul { flex-direction: column; gap: 20px; }
+            nav a { font-size: 18px; }
+            .hero-content h1 { font-size: 32px !important; margin-top: 60px; }
+            .about-container { flex-direction: column; text-align: center; }
+            .about-features { flex-direction: column; gap: 15px; }
+            .services-grid, .skills-grid-line { grid-template-columns: repeat(2, 1fr) !important; gap: 15px; }
+            .form-grid-central { grid-template-columns: 1fr; }
+            .full-row { grid-column: span 1; }
+            .btn-submit-pro-central { grid-column: span 1; }
+        }
 
-    nav {
-        display: none; /* Hidden by default */
-        position: absolute;
-        top: 100%; left: 0; width: 100%;
-        background: rgba(15, 23, 42, 0.98);
-        padding: 30px 0;
-        text-align: center;
-        border-bottom: 3px solid #76ff03;
-    }
-    nav.active { display: block; } /* Show when toggled */
-    nav ul { flex-direction: column; gap: 20px; }
-    nav a { font-size: 18px; }
+        @media (max-width: 500px) {
+            .services-grid, .skills-grid-line { grid-template-columns: 1fr !important; }
+        }
 
-    /* Hero Text Adjustment */
-    .hero-content h1 { font-size: 32px !important; margin-top: 60px; }
-    
-    /* Layouts: Stack content */
-    .about-container { flex-direction: column; text-align: center; }
-    .about-features { flex-direction: column; gap: 15px; }
+        /* --- HIDE ELEMENTS ON DESKTOP --- */
+        @media (min-width: 993px) {
+            .hero-wrapper [class*="arrow"], .hero-wrapper [class*="chevron"], .hero-wrapper [class*="angle"] { display: none !important; }
+            #mobile-toggle, .menu-toggle { display: none !important; }
+        }
 
-    /* Grids: 2 columns on tablets/large phones */
-    .services-grid, .skills-grid-line { 
-        grid-template-columns: repeat(2, 1fr) !important; 
-        gap: 15px;
-    }
-
-    /* Form: 1 column */
-    .form-grid-central { grid-template-columns: 1fr; }
-    .full-row { grid-column: span 1; }
-    .btn-submit-pro-central { grid-column: span 1; }
-}
-
-@media (max-width: 500px) {
-    /* Grids: 1 column on small phones */
-    .services-grid, .skills-grid-line { 
-        grid-template-columns: 1fr !important; 
-    }
-}
-        
+        @media (max-width: 992px) {
+            #mobile-toggle { display: block !important; }
+            .hero-wrapper [class*="arrow"], .hero-wrapper [class*="chevron"] { display: none !important; }
+        }        
     </style>
 </head>
 <body>
@@ -255,28 +248,26 @@
     <div class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></div>
 
     <div class="hero-wrapper" id="home">
-        <div class="slide active" style="background-image: url('images/imag.jpg');"></div>
-        <div class="slide" style="background-image: url('images/immm.jpg');"></div>
-        <div class="slide" style="background-image: url('images/imagee.jpg');"></div>
+        <div class="slide active" style="background-image: url('images/california-air-duct-cleaning.jpg');"></div>
+        <div class="slide" style="background-image: url('images/homesss.jfif');"></div>
+        <div class="slide" style="background-image: url('images/homeeee.jfif');"></div>
         
         <div class="overlay"></div>
 
         <header>
-    <a href="#home" class="logo">Prime<span>Vent</span></a>
-    
-    <div class="menu-toggle" id="mobile-toggle"><i class="fas fa-bars"></i></div>
-
-    <nav id="nav-menu">
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#quote">Contact Us</a></li>
-        </ul>
-    </nav>
-    <a href="#quote" class="btn-quote desktop-only">GET A QUOTE</a>
-</header>
+            <a href="#home" class="logo">Prime<span>Vent</span></a>
+            <div class="menu-toggle" id="mobile-toggle"><i class="fas fa-bars"></i></div>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#quote">Contact Us</a></li>
+                </ul>
+            </nav>
+            <a href="#quote" class="btn-quote desktop-only">GET A QUOTE</a>
+        </header>
 
         <main class="hero-content">
             <span class="subtitle">Cleaning Services</span>
@@ -291,10 +282,9 @@
             <h2>About Us</h2>
             <p>Ensuring Pure, Clean Air for a Healthier Home Environment</p>
         </div>
-
         <div class="about-container">
             <div class="about-img">
-                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=1000" alt="Duct Cleaning">
+                <img src="images/about us.jfif" alt="Duct Cleaning">
             </div>
             <div class="about-content">
                 <h3>Your Trusted Partner for Superior Duct Cleaning</h3>
@@ -302,82 +292,24 @@
                 <p>With years of experience, we prioritize your comfort and well-being. Trust us for reliable and efficient services.</p>
             </div>
         </div>
-
         <div class="about-features">
-            <div class="feat-card">
-                <i class="fas fa-users"></i>
-                <h4>Professional Team</h4>
-                <p>Our team consists of certified professionals with years of experience.</p>
-            </div>
-            <div class="feat-card">
-                <i class="fas fa-leaf"></i>
-                <h4>Eco-Friendly Solutions</h4>
-                <p>We use eco-friendly techniques to ensure a safe environment.</p>
-            </div>
-            <div class="feat-card">
-                <i class="fas fa-tools"></i>
-                <h4>Advanced Equipment</h4>
-                <p>We utilize the latest technology for efficient and thorough cleaning.</p>
-            </div>
+            <div class="feat-card"><i class="fas fa-users"></i><h4>Professional Team</h4><p>Our team consists of certified professionals with years of experience.</p></div>
+            <div class="feat-card"><i class="fas fa-leaf"></i><h4>Eco-Friendly Solutions</h4><p>We use eco-friendly techniques to ensure a safe environment.</p></div>
+            <div class="feat-card"><i class="fas fa-tools"></i><h4>Advanced Equipment</h4><p>We utilize the latest technology for efficient and thorough cleaning.</p></div>
         </div>
     </section>
 
-  <section class="section-padding services-bg" id="services">
-        <div class="section-title">
-            <h2 style="color: #0f172a;">OUR SERVICES</h2>
-            <p>Choose our services for impeccable cleanliness and comfort</p>
-        </div>
-
+    <section class="section-padding services-bg" id="services">
+        <div class="section-title"><h2 style="color: #0f172a;">OUR SERVICES</h2><p>Choose our services for impeccable cleanliness and comfort</p></div>
         <div class="services-grid">
-            <div class="service-card">
-                <i class="fas fa-wind"></i>
-                <h3>Duct Cleaning</h3>
-                <div class="line"></div>
-                <p>We offer professional duct cleaning services to enhance your home's air quality.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-border-all"></i>
-                <h3>Vents Cleaning</h3>
-                <div class="line"></div>
-                <p>Reliable and efficient vents cleaning services, always.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-soap"></i>
-                <h3>Dryer Vent Cleaning</h3>
-                <div class="line"></div>
-                <p>Prevent fire hazards with our thorough and expert dryer vent cleaning.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-fire-alt"></i>
-                <h3>Furnace Cleaning</h3>
-                <div class="line"></div>
-                <p>Trust us to keep your furnace running smoothly with our thorough cleaning.</p>
-            </div>
-
-            <div class="service-card">
-                <i class="fas fa-house-user"></i>
-                <h3>Chimney Cleaning</h3>
-                <div class="line"></div>
-                <p>Ensure your chimney is clean and safe with our expert cleaning services.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-shield-virus"></i>
-                <h3>Air Duct Sanitizing</h3>
-                <div class="line"></div>
-                <p>Sanitize your air ducts to eliminate bacteria and allergens.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-tools"></i>
-                <h3>HVAC Maintenance</h3>
-                <div class="line"></div>
-                <p>Regular maintenance to keep your HVAC system running efficiently.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-microscope"></i>
-                <h3>Indoor Air Quality Testing</h3>
-                <div class="line"></div>
-                <p>Test and improve the air quality inside your home.</p>
-            </div>
+            <div class="service-card"><i class="fas fa-wind"></i><h3>Duct Cleaning</h3><div class="line"></div><p>We offer professional duct cleaning services to enhance your home's air quality.</p></div>
+            <div class="service-card"><i class="fas fa-border-all"></i><h3>Vents Cleaning</h3><div class="line"></div><p>Reliable and efficient vents cleaning services, always.</p></div>
+            <div class="service-card"><i class="fas fa-soap"></i><h3>Dryer Vent Cleaning</h3><div class="line"></div><p>Prevent fire hazards with our thorough and expert dryer vent cleaning.</p></div>
+            <div class="service-card"><i class="fas fa-fire-alt"></i><h3>Furnace Cleaning</h3><div class="line"></div><p>Trust us to keep your furnace running smoothly with our thorough cleaning.</p></div>
+            <div class="service-card"><i class="fas fa-house-user"></i><h3>Chimney Cleaning</h3><div class="line"></div><p>Ensure your chimney is clean and safe with our expert cleaning services.</p></div>
+            <div class="service-card"><i class="fas fa-shield-virus"></i><h3>Air Duct Sanitizing</h3><div class="line"></div><p>Sanitize your air ducts to eliminate bacteria and allergens.</p></div>
+            <div class="service-card"><i class="fas fa-tools"></i><h3>HVAC Maintenance</h3><div class="line"></div><p>Regular maintenance to keep your HVAC system running efficiently.</p></div>
+            <div class="service-card"><i class="fas fa-microscope"></i><h3>Indoor Air Quality Testing</h3><div class="line"></div><p>Test and improve the air quality inside your home.</p></div>
         </div>
     </section>
 
@@ -398,54 +330,39 @@
         <div class="central-quote-card">
             <h2>Request A Quotation</h2>
             <span class="form-subtitle">Tell us about your project, and our experts will provide a customized quote within 24 hours.</span>
-
             <form class="form-grid-central" id="quoteForm">
                 <div class="input-group-central full-row"><label>FULL NAME *</label><input type="text" required></div>
                 <div class="input-group-central"><label>EMAIL ADDRESS *</label><input type="email" required></div>
-                <div class="input-group-central"><label>PHONE NUMBER</label><input type="text"></div>
+                <div class="input-group-central">
+                    <label>PHONE NUMBER *</label>
+                    <div style="display: flex; align-items: center; border: 2px solid #e2e8f0; border-radius: 10px; background-color: #fdfdfd; padding: 0 10px;">
+                        <span style="font-weight: 700; color: #0f172a; padding-right: 5px; border-right: 1px solid #e2e8f0; margin-right: 10px;">+1</span>
+                        <input type="text" placeholder="xxx-xxx-xxxx" required style="border: none; padding: 14px 0; width: 100%; outline: none; background: transparent;">
+                    </div>
+                </div>
                 <div class="input-group-central"><label>AC UNITS IN HOUSE *</label><input type="number" required></div>
-                <div class="input-group-central"><label>AVAILABILITY *</label><input type="text" required></div>
+                <div class="input-group-central">
+                    <label>ZIP CODE *</label>
+                    <input type="text" placeholder="xxxxx" required maxlength="5" pattern="[0-9]{5}" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                </div>
+                <div class="input-group-central full-row"><label>AVAILABILITY *</label><input type="text" required></div>
                 <div class="input-group-central full-row"><label>ADDITIONAL DETAILS</label><textarea rows="3"></textarea></div>
                 <button type="submit" class="btn-submit-pro-central">Get My Free Quote</button>
             </form>
         </div>
     </section>
-<section class="skills-final-section">
+
+    <section class="skills-final-section">
         <h2>Our <span>Skills</span></h2>
         <div class="skills-grid-line">
-            <div class="skill-pro-card">
-                <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=400" class="skill-pro-img">
-                <div class="skill-pro-body"><i class="fas fa-search"></i><h4>Thorough Inspection</h4><p>We inspect every duct thoroughly for tailored cleaning.</p></div>
-            </div>
-            <div class="skill-pro-card">
-                <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?q=80&w=400" class="skill-pro-img">
-                <div class="skill-pro-body"><i class="fas fa-certificate"></i><h4>Certified Professionals</h4><p>Our team consists of certified duct cleaning experts.</p></div>
-            </div>
-            <div class="skill-pro-card">
-                <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=400" class="skill-pro-img">
-                <div class="skill-pro-body"><i class="fas fa-leaf"></i><h4>Eco-Friendly Solutions</h4><p>Our methods are eco-friendly and sustainable.</p></div>
-            </div>
-            <div class="skill-pro-card">
-                <img src="https://images.unsplash.com/photo-1527515545081-5db817172677?q=80&w=400" class="skill-pro-img">
-                <div class="skill-pro-body"><i class="fas fa-broom"></i><h4>Comprehensive Cleaning</h4><p>We clean air ducts, vents, and return lines comprehensively.</p></div>
-            </div>
-
-            <div class="skill-pro-card">
-                <img src="images/OIP.jfif" class="skill-pro-img">
-                <div class="skill-pro-body"><i class="fas fa-tools"></i><h4>State-of-the-Art Equipment</h4><p>We use cutting-edge tools for efficient cleaning.</p></div>
-            </div>
-            <div class="skill-pro-card">
-                <img src="images/california-air-duct-cleaning.jpg" class="skill-pro-img">
-                <div class="skill-pro-body"><i class="fas fa-handshake"></i><h4>Advanced Techniques</h4><p>We employ advanced techniques for superior and lasting cleanliness.</p></div>
-            </div>
-            <div class="skill-pro-card">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=400" class="skill-pro-img">
-                <div class="skill-pro-body"><i class="fas fa-globe"></i><h4>Business Growth</h4><p>Bringing our expertise worldwide, ensuring clean air knows no boundaries.</p></div>
-            </div>
-            <div class="skill-pro-card">
-                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=400" class="skill-pro-img">
-                <div class="skill-pro-body"><i class="fas fa-bullseye"></i><h4>Customer Satisfaction</h4><p>We prioritize satisfaction for a pleasant experience.</p></div>
-            </div>
+            <div class="skill-pro-card"><img src="images/xyz.jfif" class="skill-pro-img"><div class="skill-pro-body"><i class="fas fa-search"></i><h4>Thorough Inspection</h4><p>We inspect every duct thoroughly for tailored cleaning.</p></div></div>
+            <div class="skill-pro-card"><img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?q=80&w=400" class="skill-pro-img"><div class="skill-pro-body"><i class="fas fa-certificate"></i><h4>Certified Professionals</h4><p>Our team consists of certified duct cleaning experts.</p></div></div>
+            <div class="skill-pro-card"><img src="images/ecoo.jfif" class="skill-pro-img"><div class="skill-pro-body"><i class="fas fa-leaf"></i><h4>Eco-Friendly Solutions</h4><p>Our methods are eco-friendly and sustainable.</p></div></div>
+            <div class="skill-pro-card"><img src="images/abc.jfif" class="skill-pro-img"><div class="skill-pro-body"><i class="fas fa-broom"></i><h4>Comprehensive Cleaning</h4><p>We clean air ducts, vents, and return lines comprehensively.</p></div></div>
+            <div class="skill-pro-card"><img src="images/OIP.jfif" class="skill-pro-img"><div class="skill-pro-body"><i class="fas fa-tools"></i><h4>State-of-the-Art Equipment</h4><p>We use cutting-edge tools for efficient cleaning.</p></div></div>
+            <div class="skill-pro-card"><img src="images/california-air-duct-cleaning.jpg" class="skill-pro-img"><div class="skill-pro-body"><i class="fas fa-handshake"></i><h4>Advanced Techniques</h4><p>We employ advanced techniques for superior and lasting cleanliness.</p></div></div>
+            <div class="skill-pro-card"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=400" class="skill-pro-img"><div class="skill-pro-body"><i class="fas fa-globe"></i><h4>Business Growth</h4><p>Bringing our expertise worldwide, ensuring clean air knows no boundaries.</p></div></div>
+            <div class="skill-pro-card"><img src="images/aaa.jfif" class="skill-pro-img"><div class="skill-pro-body"><i class="fas fa-bullseye"></i><h4>Customer Satisfaction</h4><p>We prioritize satisfaction for a pleasant experience.</p></div></div>
         </div>
     </section>
 
@@ -460,16 +377,12 @@
                 <a href="#projects" class="nav-link-simple">Projects<div class="link-dash"></div></a>
                 <a href="#quote" class="nav-link-simple">Contact Us<div class="link-dash"></div></a>
             </div>
-            <div class="social-links-simple">
-                <a href="#" class="social-btn-simple"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social-btn-simple"><i class="fas fa-envelope"></i></a>
-            </div>
+          
             <p class="copyright-simple">&copy; 2026 Prime Vent Purifiers. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script>
-        // 1. Hero Slideshow Logic
         const slides = document.querySelectorAll('.slide');
         let currentSlide = 0;
         function nextSlide() {
@@ -479,14 +392,12 @@
         }
         setInterval(nextSlide, 5000);
 
-        // 2. Quote Form Functionality
         document.getElementById('quoteForm').addEventListener('submit', function(e) {
             e.preventDefault();
             alert("Thank you! Your request has been sent. Our team will contact you within 24 hours.");
             this.reset();
         });
 
-        // 3. Back to Top Button Logic
         const btt = document.getElementById('backToTop');
         window.onscroll = function() {
             if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
@@ -495,28 +406,19 @@
                 btt.style.display = "none";
             }
         };
-        btt.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        btt.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = mobileToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
         });
-        // Mobile Menu Toggle Logic
-const mobileToggle = document.getElementById('mobile-toggle');
-const navMenu = document.getElementById('nav-menu');
-
-mobileToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    // Change icon from bars to X
-    const icon = mobileToggle.querySelector('i');
-    icon.classList.toggle('fa-bars');
-    icon.classList.toggle('fa-times');
-});
-
-// Close menu when a link is clicked
-document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-    });
-});
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => { navMenu.classList.remove('active'); });
+        });
     </script>
-
 </body>
 </html>
