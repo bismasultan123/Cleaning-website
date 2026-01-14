@@ -51,18 +51,18 @@
             z-index: 1;
         }
 
-/* --- UPDATED HEADER & LOGO --- */
 header {
     position: fixed;
     width: 100%;
     z-index: 1000;
     background: rgba(15, 23, 42, 0.95);
-    padding: 0 5%; /* Reduced padding for mobile */
+    padding: 0 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    height: 110px; /* Standardized height */
+    height: 90px; /* Standardized height */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .logo {
@@ -72,58 +72,70 @@ header {
 }
 
 .logo-img {
-    height: 180px; /* Controlled height */
-    width: auto;  /* Maintain aspect ratio */
-    display: block;
-    margin: 0;    /* Removed negative margins */
+    height: 155px; /* Professional sizing */
+    width: auto;
+    transition: transform 0.3s ease;
+    margin-left: -40px;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
 }
 
 nav ul { 
     display: flex; 
     list-style: none; 
-    gap: 60px; 
-    margin: 0; /* Cleaned margins */
+    gap: 35px; 
+    align-items: center;
 }
 
 nav a { 
     color: #fff; 
     text-decoration: none; 
-    font-size: 20px; /* Professional font size */
+    font-size: 15px; 
     font-weight: 600; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
     transition: 0.3s; 
-    margin-left: -50px;
 }
 
-/* --- MOBILE RESPONSIVE FIXES --- */
+nav a:hover { 
+    color: #38bdf8; 
+}
+
+/* --- BUTTON ALIGNMENT --- */
+.header-actions {
+    display: flex;
+    align-items: center;
+}
+
+.btn-quote.desktop-only {
+    margin: 0;
+    padding: 12px 24px;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+/* --- MOBILE RESPONSIVE --- */
 @media (max-width: 992px) {
     header {
         height: 70px;
+        padding: 0 5%;
     }
 
     .logo-img {
-        height: 50px; /* Smaller logo for mobile */
+        height: 45px;
     }
-
-    .menu-toggle {
-        display: block !important;
-        color: #38bdf8;
-        font-size: 24px;
-        cursor: pointer;
-        padding: 10px;
-    }
-
-    .desktop-only { display: none !important; }
 
     nav {
-        display: none;
         position: absolute;
-        top: 70px; /* Matches header height */
+        top: 70px;
         left: 0;
         width: 100%;
         background: #0f172a;
+        display: none; /* Controlled by JS active class */
         padding: 20px 0;
-        text-align: center;
-        border-bottom: 3px solid #38bdf8;
+        border-bottom: 3px solid #2563eb;
     }
 
     nav.active {
@@ -132,31 +144,7 @@ nav a {
 
     nav ul {
         flex-direction: column;
-        gap: 40px;
-        margin: 0;
-    }
-
-    nav a {
-        font-size: 20px;
-        display: block;
-        padding: 10px 0;
-    }
-
-    /* Fix Hero text for small screens */
-    .hero-content h1 {
-        font-size: 28px !important;
-        margin-top: 20px;
-    }
-}
-
-/* Specific small phone fix */
-@media (max-width: 480px) {
-    .logo-img {
-        height: 45px;
-    }
-    
-    .section-padding {
-        padding: 60px 5%;
+        gap: 20px;
     }
 }
         nav a:hover { color: #38bdf8; }
@@ -620,5 +608,3 @@ background-color: rgba(255,255,255,0.5);
     </script>
 </body>
 </html>
-
-
