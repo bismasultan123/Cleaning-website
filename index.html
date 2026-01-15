@@ -398,6 +398,66 @@ background-color: rgba(255,255,255,0.5);
         gap: 15px;
     }
 }
+/* =============================== */
+/* ✅ MOBILE HEADER FINAL FIX */
+/* =============================== */
+@media (max-width: 768px) {
+
+    /* HEADER SIZE */
+    header {
+        height: 70px;
+        padding: 0 15px;
+    }
+
+    /* LOGO FIX */
+    .logo-img {
+        height: 45px;
+        margin-left: 0;
+    }
+
+    /* HIDE DESKTOP BUTTON */
+    .desktop-only {
+        display: none !important;
+    }
+
+    /* SHOW HAMBURGER */
+    .menu-toggle {
+        display: block;
+        font-size: 22px;
+        color: #fff;
+        cursor: pointer;
+        z-index: 1100;
+    }
+
+    /* MOBILE NAV MENU */
+    nav {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #0f172a;
+        display: none;
+        padding: 20px 0;
+        z-index: 1000;
+        border-bottom: 3px solid #38bdf8;
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    nav a {
+        font-size: 16px;
+        padding: 12px 0;
+        display: block;
+    }
+}
 
 
         /* --- HIDE ELEMENTS ON DESKTOP --- */
@@ -684,5 +744,6 @@ background-color: rgba(255,255,255,0.5);
     </script>
 </body>
 </html>
+
 
 
