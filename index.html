@@ -287,109 +287,116 @@ background-color: rgba(255,255,255,0.5);
   
 
        /* ===== FINAL MOBILE FIX ===== */
+
+/* ========================= */
+/* ✅ FINAL MOBILE FIX ONLY */
+/* ========================= */
 @media (max-width: 768px) {
+
+    /* GLOBAL FIX */
+    html, body {
+        overflow-x: hidden !important;
+        width: 100%;
+    }
+
+    section, div {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
 
     /* HEADER */
     header {
-     height: 65px;
-    padding: 0 12px;
-    justify-content: flex-start;
-    gap: 10px;
-    }
-.menu-toggle {
-    margin-right: 0;
-}
-
-.logo {
-    margin-left: 5px;
-}
-    .logo-img {
-        height: 45px;
-        margin-left: 0;
-    }
-
-    .menu-toggle {
-        display: block;
-        font-size: 22px;
-    }
-
-    nav {
-        position: absolute;
-        top: 65px;
-        left: 0;
-        width: 100%;
-        background: #0f172a;
-        display: none;
-        padding: 20px 0;
-        border-bottom: 3px solid #38bdf8;
-    }
-
-    nav.active {
-        display: block;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    nav a {
-        font-size: 16px;
+        padding: 0 15px;
     }
 
     /* HERO */
+    .hero-wrapper {
+        height: auto;
+        min-height: 100vh;
+    }
+
     .hero-content {
-        padding: 0 20px;
+        padding: 0 15px;
         text-align: center;
+        align-items: center;
     }
 
     .hero-content h1 {
         font-size: 28px;
-        line-height: 1.2;
     }
 
     .hero-content p {
         font-size: 15px;
+        max-width: 100%;
     }
 
-    /* ABOUT */
+    /* ABOUT SECTION */
     .about-container {
         flex-direction: column;
+        padding: 0 15px;
     }
 
-    .about-features {
-        flex-direction: column;
+    .about-img img {
+        width: 100%;
+        height: auto;
     }
 
-    /* SERVICES & SKILLS */
-    .services-grid,
-    .skills-grid-line {
+    /* SERVICES */
+    .services-grid {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+    }
+
+    /* PROJECTS / STATS */
+    .projects-centralized {
+        padding: 60px 15px;
+        background-attachment: scroll;
+    }
+
+    .stats-grid-central {
         grid-template-columns: 1fr;
     }
 
-    /* FORM */
+    .stat-card-pro {
+        width: 100%;
+    }
+
+    /* QUOTE FORM */
+    .quote-wrapper-central {
+        padding: 50px 15px;
+        min-height: auto;
+    }
+
+    .central-quote-card {
+        width: 100%;
+        padding: 25px 20px;
+    }
+
     .form-grid-central {
         grid-template-columns: 1fr;
     }
 
     .full-row,
     .btn-submit-pro-central {
-        grid-column: span 1;
+        grid-column: span 1 !important;
     }
-    /* FIX CONTACT SECTION HEIGHT ON MOBILE */
-.quote-wrapper-central {
-    min-height: auto;
-    padding: 60px 15px;
-}
 
-.central-quote-card {
-    padding: 30px 20px;
-}
-/* HIDE DESKTOP BUTTON ON MOBILE */
-.desktop-only {
-    display: none !important;
-}
+    /* SKILLS */
+    .skills-grid-line {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+    }
 
+    /* FOOTER */
+    .minimal-light-footer {
+        padding: 40px 15px 25px;
+        background-size: 260px;
+    }
+
+    .footer-nav-simple {
+        flex-direction: column;
+        gap: 15px;
+    }
 }
 
 
@@ -677,4 +684,5 @@ background-color: rgba(255,255,255,0.5);
     </script>
 </body>
 </html>
+
 
