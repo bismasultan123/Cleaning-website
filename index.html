@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VentShield | Ultimate Air Safeguard</title>
-    <link rel="icon"  type="image/jpg" href="IMAGES/download.png">
+    <link rel="icon" size="64*64" type="image/jpg" href="IMAGES/download.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* --- CORE STYLES --- */
@@ -21,7 +21,7 @@
         body { background-color: #f8f9fa; color: #333; line-height: 1.6; }
 
         /* --- HERO SLIDESHOW --- */
-        .hero-wrapper {
+        .hero-wrapper { 
             position: relative;
             height: 100vh;
             width: 100%;
@@ -70,13 +70,13 @@ header {
     align-items: center;
     height: 100%;
 }
-
 .logo-img {
-    height: 155px; /* Professional sizing */
+    height: 120px;
     width: auto;
     transition: transform 0.3s ease;
-    margin-left: -40px;
+    margin-left: -30px;
 }
+
 
 .logo-img:hover {
     transform: scale(1.05);
@@ -116,40 +116,26 @@ nav a:hover {
     letter-spacing: 1px;
 }
 
-/* --- MOBILE RESPONSIVE --- */
-@media (max-width: 500px) {
-    header {
-        height: 40px;
-        padding: 0 5%;
-    }
 
-    .logo-img {
-        height: 85px;
-    }
-
-    nav {
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background: #0f172a;
-        display: none; /* Controlled by JS active class */
-        padding: 20px 0;
-        border-bottom: 3px solid #2563eb;
-    }
-
-    nav.active {
-        display: block;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 20px;
-    }
+    .desktop-only {
+    display: inline-flex;
 }
-        nav a:hover { color: #38bdf8; }
+ 
 
-        .btn-quote { background: #2563eb; color: #fff; padding: 10px 22px; border-radius: 5px; font-weight: 800; text-decoration: none; font-size: 13px; transition: 0.3s; border: none; cursor: pointer;  margin-top: -20px;}
+       .btn-quote {
+    background: #2563eb;
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 5px;
+    font-weight: 800;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+    margin-top: 0;
+}
+
         .btn-quote:hover { background: #fff; color: #2563eb; transform: scale(1.05); }
 
         /* --- HERO TEXT --- */
@@ -296,38 +282,94 @@ background-color: rgba(255,255,255,0.5);
         .footer-container { position: relative; z-index: 2; }
 
         /* --- UTILS --- */
-        .back-to-top { position: fixed; bottom: 20px; right: 20px; background: #2563eb; color: white; width: 45px; height: 45px; border-radius: 50%; display: none; align-items: center; justify-content: center; z-index: 1000; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .back-to-top { position: fixed; bottom: 25px; right: 20px; background: #2563eb; color: white; width: 45px; height: 45px; border-radius: 50%; display: none; align-items: center; justify-content: center; z-index: 1000; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
         
-        /* --- MOBILE RESPONSIVE FIXES --- */
-        @media (max-width: 992px) {
-            header { padding: 10px 5%; justify-content: space-between; }
-            .menu-toggle { display: block; color: #38bdf8; font-size: 24px; cursor: pointer; z-index: 1001; }
-            .desktop-only { display: none; }
-            nav {
-                display: none;
-                position: absolute;
-                top: 100%; left: 0; width: 100%;
-                background: rgba(15, 23, 42, 0.98);
-                padding: 30px 0;
-                text-align: center;
-                border-bottom: 3px solid #38bdf8;
-            }
-            nav.active { display: block; }
-            nav ul { flex-direction: column; gap: 20px; }
-            nav a { font-size: 18px; }
-            .hero-content h1 { font-size: 32px !important; margin-top: 60px; }
-            .about-container { flex-direction: column; text-align: center; }
-            .about-features { flex-direction: column; gap: 15px; }
-            .services-grid, .skills-grid-line { grid-template-columns: repeat(2, 1fr) !important; gap: 15px; }
-            .form-grid-central { grid-template-columns: 1fr; }
-            .full-row { grid-column: span 1; }
-            .btn-submit-pro-central { grid-column: span 1; }
-        }
+  
 
-        @media (max-width: 500px) {
-            .services-grid, .skills-grid-line { grid-template-columns: 1fr !important; }
-            .logo-img { height: 40px; }
-        }
+       /* ===== FINAL MOBILE FIX ===== */
+@media (max-width: 768px) {
+
+    /* HEADER */
+    header {
+        height: 65px;
+        padding: 0 15px;
+    }
+
+    .logo-img {
+        height: 45px;
+        margin-left: 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 22px;
+    }
+
+    nav {
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: #0f172a;
+        display: none;
+        padding: 20px 0;
+        border-bottom: 3px solid #38bdf8;
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 16px;
+    }
+
+    /* HERO */
+    .hero-content {
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+        line-height: 1.2;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+    }
+
+    /* ABOUT */
+    .about-container {
+        flex-direction: column;
+    }
+
+    .about-features {
+        flex-direction: column;
+    }
+
+    /* SERVICES & SKILLS */
+    .services-grid,
+    .skills-grid-line {
+        grid-template-columns: 1fr;
+    }
+
+    /* FORM */
+    .form-grid-central {
+        grid-template-columns: 1fr;
+    }
+
+    .full-row,
+    .btn-submit-pro-central {
+        grid-column: span 1;
+    }
+}
+
 
         /* --- HIDE ELEMENTS ON DESKTOP --- */
         @media (min-width: 993px) {
@@ -335,10 +377,7 @@ background-color: rgba(255,255,255,0.5);
             #mobile-toggle, .menu-toggle { display: none !important; }
         }
 
-        @media (max-width: 992px) {
-            #mobile-toggle { display: block !important; }
-            .hero-wrapper [class*="arrow"], .hero-wrapper [class*="chevron"] { display: none !important; }
-        }        
+    
     </style>
 </head>
 <body>
@@ -465,7 +504,14 @@ background-color: rgba(255,255,255,0.5);
                 <label style="text-align: left; font-size: 11px; font-weight: 800; margin-bottom: 8px;">PHONE NUMBER *</label>
                 <div style="display: flex; align-items: center; border: 2px solid #e2e8f0; border-radius: 10px; background-color: #fdfdfd; padding: 0 10px;">
                     <span style="font-weight: 700; color: #0f172a; padding-right: 5px; border-right: 1px solid #e2e8f0; margin-right: 10px;">+1</span>
-                    <input type="tel" placeholder="(xxx) xxx-xxxx" required oninput="formatPhoneNumber(this)" style="border: none; padding: 14px 0; width: 100%; outline: none; background: transparent;">
+                    <input 
+  type="tel"
+  name="Phone"
+  placeholder="(xxx) xxx-xxxx"
+  required
+  oninput="formatPhoneNumber(this)"
+  style="border:none;padding:14px 0;width:100%;outline:none;background:transparent;">
+
                 </div>
             </div>
 
@@ -514,7 +560,7 @@ background-color: rgba(255,255,255,0.5);
     <footer class="minimal-light-footer">
         <div class="footer-container">
             <h2 class="footer-title">Contact Us</h2>
-            <a href="info@ventshieldsolutions.com" class="footer-email">info@ventshieldsolutions.com</a>
+            <a href="mailto:info@ventshieldsolutions.com" class="footer-email">info@ventshieldsolutions.com</a>
             <div class="footer-nav-simple">
                 <a href="#home" class="nav-link-simple">Home<div class="link-dash"></div></a>
                 <a href="#services" class="nav-link-simple">Services<div class="link-dash"></div></a>
@@ -608,5 +654,3 @@ background-color: rgba(255,255,255,0.5);
     </script>
 </body>
 </html>
-
-
