@@ -291,10 +291,18 @@ background-color: rgba(255,255,255,0.5);
 
     /* HEADER */
     header {
-        height: 65px;
-        padding: 0 15px;
+     height: 65px;
+    padding: 0 12px;
+    justify-content: flex-start;
+    gap: 10px;
     }
+.menu-toggle {
+    margin-right: 0;
+}
 
+.logo {
+    margin-left: 5px;
+}
     .logo-img {
         height: 45px;
         margin-left: 0;
@@ -368,6 +376,20 @@ background-color: rgba(255,255,255,0.5);
     .btn-submit-pro-central {
         grid-column: span 1;
     }
+    /* FIX CONTACT SECTION HEIGHT ON MOBILE */
+.quote-wrapper-central {
+    min-height: auto;
+    padding: 60px 15px;
+}
+
+.central-quote-card {
+    padding: 30px 20px;
+}
+/* HIDE DESKTOP BUTTON ON MOBILE */
+.desktop-only {
+    display: none !important;
+}
+
 }
 
 
@@ -392,13 +414,14 @@ background-color: rgba(255,255,255,0.5);
         <div class="overlay"></div>
 
         <header>
-    <a href="#home" class="logo">
-        <img src="images/unnamed.png" alt="VentShield Logo" class="logo-img">
-    </a>
-    
-    <div class="menu-toggle" id="mobile-toggle">
-        <i class="fas fa-bars"></i>
-    </div>
+   <div class="menu-toggle" id="mobile-toggle">
+    <i class="fas fa-bars"></i>
+</div>
+
+<a href="#home" class="logo">
+    <img src="images/unnamed.png" alt="VentShield Logo" class="logo-img">
+</a>
+
 
     <nav id="nav-menu">
         <ul>
@@ -654,3 +677,4 @@ background-color: rgba(255,255,255,0.5);
     </script>
 </body>
 </html>
+
