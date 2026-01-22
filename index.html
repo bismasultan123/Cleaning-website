@@ -343,7 +343,9 @@
         <div class="overlay"></div>
 
         <header>
-            <a href="#home" class="logo">Prime<span>Vent</span></a>
+           <a href="#home" class="logo">
+    <img src="images/your-logo.png" alt="PrimeVent Logo" class="logo-img">
+</a>
             <div class="menu-toggle" id="mobile-toggle"><i class="fas fa-bars"></i></div>
             <nav id="nav-menu">
                 <ul>
@@ -354,15 +356,15 @@
                     <li><a href="#quote">Contact Us</a></li>
                 </ul>
             </nav>
-            <a href="#quote" class="btn-quote desktop-only">GET A QUOTE</a>
+            <a href="#quote" class="btn-quote-header desktop-only">GET A QUOTE</a>
         </header>
 
-        <main class="hero-content">
-            <span class="subtitle">Cleaning Services</span>
-            <h1>Looking For<br>Skilled Cleaners?</h1>
-            <p>Your health is our priority. We offer the best duct cleaning and sanitizing services nationwide.</p>
-            <a href="#about" class="btn-quote" style="padding: 15px 35px; width: fit-content;">LEARN MORE</a>
-        </main>
+      <main class="hero-content">
+    <span class="subtitle">Cleaning Services</span>
+    <h1>Looking For<br>Skilled Cleaners?</h1>
+    <p>Your health is our priority. We offer the best duct cleaning and sanitizing services nationwide.</p>
+    <a href="#about" class="btn-quote" style="padding: 15px 35px; width: fit-content; background: #2563eb; color: white; border: 2px solid #2563eb;">LEARN MORE</a>
+</main>
     </div>
 
     <section class="section-padding" id="about">
@@ -455,10 +457,17 @@
                 </div>
             </div>
 
-            <div class="input-group-central">
-                <label> NUMBER OF FURNACES/AC UNITS *</label>
-                <input type="number" name="AC_Units" required>
-            </div>
+           <div class="input-group-central">
+    <label>NUMBER OF FURNACES/AC UNITS *</label>
+    <select name="AC_Units" required style="padding: 14px 16px; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 14px; background-color: #fdfdfd; cursor: pointer;">
+        <option value="" disabled selected>Select Number</option>
+        <option value="1">1 Unit</option>
+        <option value="2">2 Units</option>
+        <option value="3">3 Units</option>
+        <option value="4">4 Units</option>
+        <option value="5+">5+ Units</option>
+    </select>
+</div>
 
             <div class="input-group-central">
                 <label>ZIP CODE *</label>
