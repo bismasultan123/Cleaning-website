@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PrimeVent | Professional Cleaning Services</title>
+    <title>VentShield | Ultimate Air Safeguard</title>
+    <link rel="icon" size="64*64" type="image/jpg" href="IMAGES/download.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* --- CORE STYLES --- */
@@ -20,7 +21,7 @@
         body { background-color: #f8f9fa; color: #333; line-height: 1.6; }
 
         /* --- HERO SLIDESHOW --- */
-        .hero-wrapper {
+        .hero-wrapper { 
             position: relative;
             height: 100vh;
             width: 100%;
@@ -49,117 +50,93 @@
             background: rgba(15, 23, 42, 0.7);
             z-index: 1;
         }
-        /* --- UPDATED PROFESSIONAL HEADER STYLES --- */
-    header {
-        position: fixed;
-        width: 100%;
-        z-index: 1000;
-        background: rgba(15, 23, 42, 0.98);
-        backdrop-filter: blur(10px); /* Professional glass effect */
-        padding: 0 5%; /* Gives the logo and links breathing room from the edges */
-        display: flex;
-        justify-content: center; /* Centers the inner container */
-        align-items: center;
-        height: 100px;
-        border-bottom: 2px solid rgba(56, 189, 248, 0.3);
-        transition: all 0.3s ease;
-    }
 
-    /* Container to keep content aligned but not touching screen edges */
-    .header-container {
-        width: 100%;
-        max-width: 1400px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(15, 23, 42, 0.95);
+    padding: 0 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px; /* Standardized height */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
 
-    .logo {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        padding-left: 10px; /* Moves logo "little bit right" */
-    }
+.logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.logo-img {
+    height: 120px;
+    width: auto;
+    transition: transform 0.3s ease;
+    margin-left: -30px;
+}
 
-    .logo-img {
-        height: 75px; /* Professional size */
-        width: auto;
-        transition: transform 0.3s ease;
-    }
 
-    .logo-img:hover {
-        transform: scale(1.05);
-    }
+.logo-img:hover {
+    transform: scale(1.05);
+}
 
-    nav {
-        margin-right: auto; /* Pushes nav towards the logo (moves it "thora left") */
-        margin-left: 60px;  /* Control the exact gap between logo and home */
-    }
+nav ul { 
+    display: flex; 
+    list-style: none; 
+    gap: 35px; 
+    align-items: center;
+}
 
-    nav ul {
-        display: flex;
-        list-style: none;
-        gap: 35px; /* Spacing between categories */
-    }
+nav a { 
+    color: #fff; 
+    text-decoration: none; 
+    font-size: 15px; 
+    font-weight: 600; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s; 
+}
 
-    nav a {
-        color: #ffffff;
-        text-decoration: none;
-        font-size: 14px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        transition: 0.3s;
-        position: relative;
-    }
+nav a:hover { 
+    color: #38bdf8; 
+}
 
-    /* Professional hover underline */
-    nav a::after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: -5px;
-        left: 0;
-        background-color: #38bdf8;
-        transition: width 0.3s;
-    }
+/* --- BUTTON ALIGNMENT --- */
+.header-actions {
+    display: flex;
+    align-items: center;
+}
 
-    nav a:hover::after {
-        width: 100%;
-    }
+.btn-quote.desktop-only {
+    margin: 0;
+    padding: 12px 24px;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
 
-    nav a:hover {
-        color: #38bdf8;
-    }
 
-    .btn-quote-header {
-        background: #2563eb;
-        color: #fff;
-        padding: 12px 24px;
-        border-radius: 4px;
-        font-weight: 800;
-        text-decoration: none;
-        font-size: 13px;
-        transition: 0.3s;
-        letter-spacing: 1px;
-        box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
-    }
+    .desktop-only {
+    display: inline-flex;
+}
+ 
 
-    .btn-quote-header:hover {
-        background: #38bdf8;
-        transform: translateY(-2px);
-    }
+       .btn-quote {
+    background: #2563eb;
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 5px;
+    font-weight: 800;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+    margin-top: 0;
+}
 
-    /* Mobile Fix for New Header */
-    @media (max-width: 992px) {
-        header { height: 80px; padding: 0 20px; }
-        .logo-img { height: 55px; }
-        .desktop-only { display: none; }
-        nav { margin-left: 0; }
-    }
-
-    
+        .btn-quote:hover { background: #fff; color: #2563eb; transform: scale(1.05); }
 
         /* --- HERO TEXT --- */
         .hero-content {
@@ -258,7 +235,6 @@
         .central-quote-card h2 { color: #1e3a8a; font-size: 32px; font-weight: 800; margin-bottom: 10px; text-transform: uppercase; }
         .form-grid-central { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; text-align: left; }
         .full-row { grid-column: span 2; }
-        .input-group-central { display: flex; flex-direction: column; }
         .input-group-central label { font-size: 11px; font-weight: 800; color: #0f172a; margin-bottom: 8px; letter-spacing: 0.5px; }
         .input-group-central input, .input-group-central textarea { padding: 14px 16px; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 14px; background-color: #fdfdfd; transition: 0.3s; }
         .input-group-central input:focus { border-color: #2563eb; outline: none; box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1); }
@@ -277,58 +253,241 @@
         .skill-pro-body i { color: #2563eb; font-size: 24px; margin-bottom: 10px; display: block; }
         .skill-pro-body h4 { color: #0f172a; font-size: 16px; font-weight: 800; margin-bottom: 8px; }
 
-        /* --- FOOTER --- */
-        .minimal-light-footer { background-color: #ffffff; color: #000000; padding: 60px 5% 30px; font-family: 'Segoe UI', Arial, sans-serif; border-top: 1px solid #eeeeee; text-align: center; }
+        /* --- FOOTER WITH LOGO BACKGROUND --- */
+        .minimal-light-footer { 
+            position: relative;
+            background-color: #050930; 
+            color: #000000; 
+            padding: 60px 5% 30px; 
+            font-family: 'Segoe UI', Arial, sans-serif; 
+            border-top: 1px solid #0d0328; 
+            text-align: center; 
+            /* Light Logo background setting */
+           
+            background-repeat: no-repeat;
+            background-position: center;
+           background-size: 420px;   /* try 400–500px */
+background-color: rgba(255,255,255,0.5);
+
+            background-blend-mode: overlay;
+           /* High transparency white overlay */
+        }
+        
         .footer-nav-simple { display: flex; justify-content: center; gap: 35px; margin: 40px 0; flex-wrap: wrap; }
-        .nav-link-simple { text-decoration: none; color: #000000; font-weight: 700; font-size: 15px; }
+        .nav-link-simple { text-decoration: none; color: #000000; font-weight: 700; font-size: 15px; position: relative; z-index: 2; }
         .link-dash { width: 20px; height: 3px; background-color: #38bdf8; margin: 4px auto 0; }
-        .social-links-simple { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; }
+        .social-links-simple { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; position: relative; z-index: 2; }
         .social-btn-simple { width: 40px; height: 40px; background: #000000; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; text-decoration: none; transition: 0.3s; }
         .social-btn-simple:hover { background-color: #2563eb; color: #ffffff; }
+        .footer-container { position: relative; z-index: 2; }
 
         /* --- UTILS --- */
-        .back-to-top { position: fixed; bottom: 20px; right: 20px; background: #2563eb; color: white; width: 45px; height: 45px; border-radius: 50%; display: none; align-items: center; justify-content: center; z-index: 1000; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .back-to-top { position: fixed; bottom: 25px; right: 20px; background: #2563eb; color: white; width: 45px; height: 45px; border-radius: 50%; display: none; align-items: center; justify-content: center; z-index: 1000; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
         
-        /* --- MOBILE RESPONSIVE FIXES --- */
-        @media (max-width: 992px) {
-            header { padding: 15px 5%; justify-content: space-between; }
-            .menu-toggle { display: block; color: #38bdf8; font-size: 24px; cursor: pointer; z-index: 1001; }
-            .desktop-only { display: none; }
-            nav {
-                display: none;
-                position: absolute;
-                top: 100%; left: 0; width: 100%;
-                background: rgba(15, 23, 42, 0.98);
-                padding: 30px 0;
-                text-align: center;
-                border-bottom: 3px solid #38bdf8;
-            }
-            nav.active { display: block; }
-            nav ul { flex-direction: column; gap: 20px; }
-            nav a { font-size: 18px; }
-            .hero-content h1 { font-size: 32px !important; margin-top: 60px; }
-            .about-container { flex-direction: column; text-align: center; }
-            .about-features { flex-direction: column; gap: 15px; }
-            .services-grid, .skills-grid-line { grid-template-columns: repeat(2, 1fr) !important; gap: 15px; }
-            .form-grid-central { grid-template-columns: 1fr; }
-            .full-row { grid-column: span 1; }
-            .btn-submit-pro-central { grid-column: span 1; }
-        }
+  
 
-        @media (max-width: 500px) {
-            .services-grid, .skills-grid-line { grid-template-columns: 1fr !important; }
-        }
+       /* ===== FINAL MOBILE FIX ===== */
+@media (max-width: 768px) {
+
+    /* HEADER */
+    header {
+        height: 65px;
+        padding: 0 15px;
+    }
+
+    .logo-img {
+        height: 45px;
+        margin-left: 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 22px;
+    }
+
+    nav {
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: #0f172a;
+        display: none;
+        padding: 20px 0;
+        border-bottom: 3px solid #38bdf8;
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 16px;
+    }
+
+    /* HERO */
+    .hero-content {
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+        line-height: 1.2;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+    }
+
+    /* ABOUT */
+    .about-container {
+        flex-direction: column;
+    }
+
+    .about-features {
+        flex-direction: column;
+    }
+
+    /* SERVICES & SKILLS */
+    .services-grid,
+    .skills-grid-line {
+        grid-template-columns: 1fr;
+    }
+
+    /* FORM */
+    .form-grid-central {
+        grid-template-columns: 1fr;
+    }
+
+    .full-row,
+    .btn-submit-pro-central {
+        grid-column: span 1;
+    }
+}
+
 
         /* --- HIDE ELEMENTS ON DESKTOP --- */
         @media (min-width: 993px) {
             .hero-wrapper [class*="arrow"], .hero-wrapper [class*="chevron"], .hero-wrapper [class*="angle"] { display: none !important; }
             #mobile-toggle, .menu-toggle { display: none !important; }
         }
+/* ========================= */
+/* ✅ FINAL MOBILE FIX ONLY */
+/* ========================= */
+@media (max-width: 768px) {
 
-        @media (max-width: 992px) {
-            #mobile-toggle { display: block !important; }
-            .hero-wrapper [class*="arrow"], .hero-wrapper [class*="chevron"] { display: none !important; }
-        }        
+    /* GLOBAL FIX */
+    html, body {
+        overflow-x: hidden !important;
+        width: 100%;
+    }
+
+    section, div {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* HEADER */
+    header {
+        padding: 0 15px;
+    }
+
+    /* HERO */
+    .hero-wrapper {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .hero-content {
+        padding: 0 15px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+        max-width: 100%;
+    }
+
+    /* ABOUT SECTION */
+    .about-container {
+        flex-direction: column;
+        padding: 0 15px;
+    }
+
+    .about-img img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* SERVICES */
+    .services-grid {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+    }
+
+    /* PROJECTS / STATS */
+    .projects-centralized {
+        padding: 60px 15px;
+        background-attachment: scroll;
+    }
+
+    .stats-grid-central {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-card-pro {
+        width: 100%;
+    }
+
+    /* QUOTE FORM */
+    .quote-wrapper-central {
+        padding: 50px 15px;
+        min-height: auto;
+    }
+
+    .central-quote-card {
+        width: 100%;
+        padding: 25px 20px;
+    }
+
+    .form-grid-central {
+        grid-template-columns: 1fr;
+    }
+
+    .full-row,
+    .btn-submit-pro-central {
+        grid-column: span 1 !important;
+    }
+
+    /* SKILLS */
+    .skills-grid-line {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+    }
+
+    /* FOOTER */
+    .minimal-light-footer {
+        padding: 40px 15px 25px;
+        background-size: 260px;
+    }
+
+    .footer-nav-simple {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+    
     </style>
 </head>
 <body>
@@ -343,28 +502,33 @@
         <div class="overlay"></div>
 
         <header>
-           <a href="#home" class="logo">
-    <img src="images/your-logo.png" alt="PrimeVent Logo" class="logo-img">
-</a>
-            <div class="menu-toggle" id="mobile-toggle"><i class="fas fa-bars"></i></div>
-            <nav id="nav-menu">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#quote">Contact Us</a></li>
-                </ul>
-            </nav>
-            <a href="#quote" class="btn-quote-header desktop-only">GET A QUOTE</a>
-        </header>
+    <a href="#home" class="logo">
+        <img src="images/unnamed.png" alt="VentShield Logo" class="logo-img">
+    </a>
+    
+    <div class="menu-toggle" id="mobile-toggle">
+        <i class="fas fa-bars"></i>
+    </div>
 
-      <main class="hero-content">
-    <span class="subtitle">Cleaning Services</span>
-    <h1>Looking For<br>Skilled Cleaners?</h1>
-    <p>Your health is our priority. We offer the best duct cleaning and sanitizing services nationwide.</p>
-    <a href="#about" class="btn-quote" style="padding: 15px 35px; width: fit-content; background: #2563eb; color: white; border: 2px solid #2563eb;">LEARN MORE</a>
-</main>
+    <nav id="nav-menu">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#quote">Contact Us</a></li>
+        </ul>
+    </nav>
+    
+    <a href="#quote" class="btn-quote desktop-only">GET A QUOTE</a>
+</header>
+
+        <main class="hero-content">
+            <span class="subtitle">Ultimate Air Safeguard</span>
+            <h1>Looking For<br>Skilled Cleaners?</h1>
+            <p>Your health is our priority. We offer the best duct cleaning and sanitizing services nationwide.</p>
+            <a href="#about" class="btn-quote" style="padding: 15px 35px; width: fit-content;">LEARN MORE</a>
+        </main>
     </div>
 
     <section class="section-padding" id="about">
@@ -378,7 +542,7 @@
             </div>
             <div class="about-content">
                 <h3>Your Trusted Partner for Superior Duct Cleaning</h3>
-                <p>At PrimeVent Purifiers, we provide top-quality duct cleaning to ensure your home's air is clean and healthy. Our certified professionals use advanced equipment and eco-friendly techniques.</p>
+                <p>At VentShield, we provide top-quality duct cleaning to ensure your home's air is clean and healthy. Our certified professionals use advanced equipment and eco-friendly techniques.</p>
                 <p>With years of experience, we prioritize your comfort and well-being. Trust us for reliable and efficient services.</p>
             </div>
         </div>
@@ -415,79 +579,79 @@
             </div>
         </div>
     </section>
-<section class="quote-wrapper-central" id="quote">
+
+    <section class="quote-wrapper-central" id="quote">
     <div class="central-quote-card">
         <h2>Request A Quotation</h2>
-        <span class="form-subtitle">Tell us about your project, and our experts will provide a customized quote within 24 hours.</span>
+        <p class="form-subtitle" style="color: #64748b; margin-bottom: 30px; font-size: 14px;">
+            Tell us about your project, and our experts will provide a customized quote within 24 hours.
+        </p>
 
-        <div id="success-message" style="display: none; padding: 40px 20px; text-align: center;">
+        <div id="success-message" style="display: none; padding: 20px; text-align: center;">
             <div style="font-size: 50px; color: #2563eb; margin-bottom: 15px;">✓</div>
             <h3 style="color: #0f172a;">Request Received!</h3>
-            <p style="color: #64748b;">We will contact you at the number provided within 24 hours.</p>
+            <p style="color: #64748b;">We will contact you within 24 hours.</p>
             <button onclick="location.reload()" style="margin-top:20px; background: #2563eb; color:white; border:none; padding:10px 20px; border-radius:5px; cursor:pointer;">Send Another</button>
         </div>
 
         <form class="form-grid-central" id="quoteForm" action="https://api.web3forms.com/submit" method="POST">
             
-            <input type="hidden" name="access_key" value="PASTE_YOUR_KEY_HERE">
-            <input type="hidden" name="subject" value="New Quote Request - PrimeVent">
-            <input type="checkbox" name="botcheck" id="" style="display: none;">
+            <input type="hidden" name="access_key" value="f4e3b947-3d37-47db-90c6-389460f2e25a">
+            <input type="hidden" name="subject" value="New Quote Request - VentShield">
+            <input type="checkbox" name="botcheck" style="display: none;">
 
-            <div class="input-group-central full-row">
-                <label>FULL NAME *</label>
-                <input type="text" name="Name" required>
+            <div class="input-group-central full-row" style="grid-column: span 2; display: flex; flex-direction: column; margin-bottom: 15px;">
+                <label style="text-align: left; font-size: 11px; font-weight: 800; margin-bottom: 8px;">FULL NAME *</label>
+                <input type="text" name="Name" placeholder="Your Full Name" required style="width: 100%; padding: 14px; border: 2px solid #e2e8f0; border-radius: 10px;">
             </div>
             
-            <div class="input-group-central">
-                <label>EMAIL ADDRESS *</label>
-                <input type="email" name="Email" required>
+            <div class="input-group-central" style="display: flex; flex-direction: column; margin-bottom: 15px;">
+                <label style="text-align: left; font-size: 11px; font-weight: 800; margin-bottom: 8px;">EMAIL ADDRESS *</label>
+                <input type="email" name="Email" placeholder="email@example.com" required style="padding: 14px; border: 2px solid #e2e8f0; border-radius: 10px;">
             </div>
 
-            <div class="input-group-central">
-                <label>PHONE NUMBER *</label>
+            <div class="input-group-central" style="display: flex; flex-direction: column; margin-bottom: 15px;">
+                <label style="text-align: left; font-size: 11px; font-weight: 800; margin-bottom: 8px;">PHONE NUMBER *</label>
                 <div style="display: flex; align-items: center; border: 2px solid #e2e8f0; border-radius: 10px; background-color: #fdfdfd; padding: 0 10px;">
                     <span style="font-weight: 700; color: #0f172a; padding-right: 5px; border-right: 1px solid #e2e8f0; margin-right: 10px;">+1</span>
-                    <input type="tel" 
-       id="phoneInput"
-       placeholder="(xxx) xxx-xxxx" 
-       required 
-       maxlength="14" 
-       oninput="formatPhoneNumber(this)"
-       style="border: none; padding: 14px 0; width: 100%; outline: none; background: transparent;">
+                    <input 
+  type="tel"
+  name="Phone"
+  placeholder="(xxx) xxx-xxxx"
+  required
+  oninput="formatPhoneNumber(this)"
+  style="border:none;padding:14px 0;width:100%;outline:none;background:transparent;">
+
                 </div>
             </div>
 
-           <div class="input-group-central">
-    <label>NUMBER OF FURNACES/AC UNITS *</label>
-    <select name="AC_Units" required style="padding: 14px 16px; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 14px; background-color: #fdfdfd; cursor: pointer;">
-        <option value="" disabled selected>Select Number</option>
-        <option value="1">1 Unit</option>
-        <option value="2">2 Units</option>
-        <option value="3">3 Units</option>
-        <option value="4">4 Units</option>
-        <option value="5+">5+ Units</option>
-    </select>
-</div>
-
-            <div class="input-group-central">
-                <label>ZIP CODE *</label>
-                <input type="text" name="Zip_Code" placeholder="xxxxx" required maxlength="5" pattern="[0-9]{5}" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+            <div class="input-group-central" style="display: flex; flex-direction: column; margin-bottom: 15px;">
+                <label style="text-align: left; font-size: 11px; font-weight: 800; margin-bottom: 8px;">FURNACES/AC UNITS *</label>
+                <input type="number" name="AC_Units" placeholder="Number of units" required style="padding: 14px; border: 2px solid #e2e8f0; border-radius: 10px;">
             </div>
 
-            <div class="input-group-central full-row">
-                <label>AVAILABILITY *</label>
-                <input type="text" name="Availability" placeholder="e.g. Monday Morning" required>
+            <div class="input-group-central" style="display: flex; flex-direction: column; margin-bottom: 15px;">
+                <label style="text-align: left; font-size: 11px; font-weight: 800; margin-bottom: 8px;">ZIP CODE *</label>
+                <input type="text" name="Zip_Code" placeholder="xxxxx" required maxlength="5" style="padding: 14px; border: 2px solid #e2e8f0; border-radius: 10px;">
+            </div>
+
+            <div class="input-group-central full-row" style="grid-column: span 2; display: flex; flex-direction: column; margin-bottom: 15px;">
+                <label style="text-align: left; font-size: 11px; font-weight: 800; margin-bottom: 8px;">AVAILABILITY *</label>
+                <input type="text" name="Availability" placeholder="e.g. Monday Morning" required style="width: 100%; padding: 14px; border: 2px solid #e2e8f0; border-radius: 10px;">
             </div>
             
-            <div class="input-group-central full-row">
-                <label>ADDITIONAL DETAILS</label>
-                <textarea name="Details" rows="3"></textarea>
+            <div class="input-group-central full-row" style="grid-column: span 2; display: flex; flex-direction: column; margin-bottom: 20px;">
+                <label style="text-align: left; font-size: 11px; font-weight: 800; margin-bottom: 8px;">ADDITIONAL DETAILS</label>
+                <textarea name="Details" rows="3" style="width: 100%; padding: 14px; border: 2px solid #e2e8f0; border-radius: 10px; resize: vertical;"></textarea>
             </div>
             
-            <button type="submit" id="submitBtn" class="btn-submit-pro-central">Get My Free Quote</button>
+            <button type="submit" id="submitBtn" class="btn-submit-pro-central" style="grid-column: span 2; width: 100%; background: #2563eb; color: white; padding: 18px; border: none; border-radius: 10px; font-weight: 800; cursor: pointer;">
+                GET MY FREE QUOTE
+            </button>
         </form>
     </div>
 </section>
+
 
     <section class="skills-final-section">
         <h2>Our <span>Skills</span></h2>
@@ -506,7 +670,7 @@
     <footer class="minimal-light-footer">
         <div class="footer-container">
             <h2 class="footer-title">Contact Us</h2>
-            <a href="info@ventshieldsolutions.com" class="footer-email">info@ventshieldsolutions.com</a>
+            <a href="mailto:info@ventshieldsolutions.com" class="footer-email">info@ventshieldsolutions.com</a>
             <div class="footer-nav-simple">
                 <a href="#home" class="nav-link-simple">Home<div class="link-dash"></div></a>
                 <a href="#services" class="nav-link-simple">Services<div class="link-dash"></div></a>
@@ -514,15 +678,11 @@
                 <a href="#projects" class="nav-link-simple">Projects<div class="link-dash"></div></a>
                 <a href="#quote" class="nav-link-simple">Contact Us<div class="link-dash"></div></a>
             </div>
-           <div class="social-links-simple">
-                <a href="#" class="social-btn-simple">
-    <i class="fab fa-facebook-f"></i>
-</a>
-<a href="#" class="social-btn-simple">
-    <i class="fab fa-instagram"></i>
-</a>
+            <div class="social-links-simple">
+                <a href="#" class="social-btn-simple"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-btn-simple"><i class="fab fa-instagram"></i></a>
             </div>
-            <p class="copyright-simple">&copy; 2026 Prime Vent Purifiers. All Rights Reserved.</p>
+            <p class="copyright-simple">&copy; 2026 VentShield Purifiers. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -535,12 +695,6 @@
             slides[currentSlide].classList.add('active');
         }
         setInterval(nextSlide, 5000);
-
-        document.getElementById('quoteForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert("Thank you! Your request has been sent. Our team will contact you within 24 hours.");
-            this.reset();
-        });
 
         const btt = document.getElementById('backToTop');
         window.onscroll = function() {
@@ -560,66 +714,53 @@
             icon.classList.toggle('fa-bars');
             icon.classList.toggle('fa-times');
         });
+
         document.querySelectorAll('nav a').forEach(link => {
             link.addEventListener('click', () => { navMenu.classList.remove('active'); });
         });
-   const form = document.getElementById('quoteForm');
-const successMessage = document.getElementById('success-message');
-const submitBtn = document.getElementById('submitBtn');
 
-form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    submitBtn.innerHTML = "Sending...";
-    submitBtn.disabled = true;
+        const form = document.getElementById('quoteForm');
+        const successMessage = document.getElementById('success-message');
+        const submitBtn = document.getElementById('submitBtn');
 
-    const formData = new FormData(form);
-    const object = Object.fromEntries(formData);
-    const json = JSON.stringify(object);
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            submitBtn.innerHTML = "Sending...";
+            submitBtn.disabled = true;
 
-    fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: json
-        })
-        .then(async (response) => {
-            let json = await response.json();
-            if (response.status == 200) {
-                form.style.display = "none";
-                successMessage.style.display = "block";
-            } else {
-                alert("Error: " + json.message);
-            }
-        })
-        .catch(error => {
-            alert("Network error. Please try again later.");
-        })
-        .finally(() => {
-            submitBtn.innerHTML = "Get My Free Quote";
-            submitBtn.disabled = false;
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: json
+            })
+            .then(async (response) => {
+                if (response.status == 200) {
+                    form.style.display = "none";
+                    successMessage.style.display = "block";
+                } else {
+                    let res = await response.json();
+                    alert("Error: " + res.message);
+                }
+            })
+            .catch(error => { alert("Network error. Please try again later."); })
+            .finally(() => {
+                submitBtn.innerHTML = "Get My Free Quote";
+                submitBtn.disabled = false;
+            });
         });
-});
 
-function formatPhoneNumber(input) {
-    // Remove all non-numeric characters
-    let num = input.value.replace(/\D/g, '');
-    let size = num.length;
-
-    if (size === 0) {
-        input.value = "";
-    } else if (size <= 3) {
-        // Formats: (123
-        input.value = '(' + num;
-    } else if (size <= 6) {
-        // Formats: (123) 456
-        input.value = '(' + num.slice(0, 3) + ') ' + num.slice(3);
-    } else {
-        // Formats: (123) 456-7890
-        input.value = '(' + num.slice(0, 3) + ') ' + num.slice(3, 6) + '-' + num.slice(6, 10);
-    }
-}
+        function formatPhoneNumber(input) {
+            let num = input.value.replace(/\D/g, '');
+            let size = num.length;
+            if (size === 0) input.value = "";
+            else if (size <= 3) input.value = '(' + num;
+            else if (size <= 6) input.value = '(' + num.slice(0, 3) + ') ' + num.slice(3);
+            else input.value = '(' + num.slice(0, 3) + ') ' + num.slice(3, 6) + '-' + num.slice(6, 10);
+        }
     </script>
 </body>
 </html>
